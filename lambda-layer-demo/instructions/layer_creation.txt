@@ -1,0 +1,25 @@
+# Step 1: In AWS Console, open CloudShell.
+
+# Step 2: Create a folder for layer v1
+mkdir layer_v1 && cd layer_v1
+mkdir python
+
+# Step 3: Install dependencies into python/ folder
+pip install requests -t python/
+
+# Step 4: Add your layer helper file
+echo "def get_layer_message():
+    return 'This is from Layer v1'" > python/layer_helper.py
+
+# Step 5: Zip the folder
+zip -r layer_v1.zip python
+
+# Step 6: In AWS Console → Lambda → Layers → Create layer
+# Upload layer_v1.zip
+# Runtime: Python 3.12
+# Name: lambda-demo-layer
+# Version description: "Layer v1 with helper message"
+
+# Step 7: Attach this layer to your Lambda function
+
+

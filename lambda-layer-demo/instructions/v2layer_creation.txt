@@ -1,0 +1,12 @@
+# In CloudShell
+mkdir ../layer_v2 && cd ../layer_v2
+mkdir python
+pip install requests -t python/
+
+# Updated helper
+echo "def get_layer_message():
+    return 'This is from Layer v2'" > python/layer_helper.py
+
+zip -r layer_v2.zip python
+
+# Upload as new version of existing layer in AWS Console
