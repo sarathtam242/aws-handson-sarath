@@ -3,7 +3,7 @@ import random
 
 # Cold start init
 start_init = time.time()
-time.sleep(15)  # Simulate heavy loading
+time.sleep(20)  # Simulate heavy loading
 GLOBAL_INIT_DURATION = time.time() - start_init
 COLD_START = True
 
