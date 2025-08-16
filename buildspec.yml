@@ -4,13 +4,18 @@ phases:
   install:
     commands:
       - echo "No dependencies to install"
+
   build:
     commands:
       - echo "Build started on `date`"
+      - echo "Making scripts executable"
+      - chmod +x scripts/*.sh
       - echo "Build completed on `date`"
+
 artifacts:
   files:
     - '**/*'
+
 cache:
   paths:
     - 'node_modules/**/*'   # won’t be used now, but useful if later you add Node.js
